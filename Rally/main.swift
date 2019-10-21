@@ -59,7 +59,7 @@ while(addMore){
                     go = false
                     category = "Racing Car"
                 }else{
-                    print("\n****8Wrong Selection! TRY AGAIN****\n")
+                    print("\n**** Wrong Selection! TRY AGAIN ****\n")
                     go = true
                 }
                 
@@ -87,7 +87,7 @@ while(addMore){
                 }
             }
         default:
-            print("\n****8Wrong Selection! TRY AGAIN****\n")
+            print("\n**** Wrong Selection! TRY AGAIN ****\n")
             isValid = true
             break
         }
