@@ -7,20 +7,22 @@
 //
 
 import Foundation
-print("\n\n**************************************************************************")
-print("*********       *********  ******** ********* ********* ******** *********")
-print("********* ***** ********    ******* ********* ********** ****** **********")
-print("********* ***** ******* **** ****** ********* ************ *** ***********")
-print("*********     ******** ****** ***** ********* ************** *************")
-print("********* **** ******          **** ********* ************** *************")
-print("********* ***** **** ********** *** ********* ************** *************")
-print("********* ****** ** ************ **        **        ******* *************")
-print("**************************************************************************")
+
+print("\n\n🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁")
+print("*********🚩🚩🚩🚩**********🚩🚩********🚩***********🚩*********🚩********🚩******")
+print("*********🚩*****🚩********🚩  🚩*******🚩***********🚩**********🚩******🚩*******")
+print("*********🚩*****🚩*******🚩****🚩******🚩***********🚩************🚩***🚩********")
+print("*********🚩🚩🚩 ********🚩******🚩*****🚩***********🚩**************🚩***********")
+print("*********🚩****🚩******🚩🚩🚩🚩🚩🚩****🚩***********🚩**************🚩***********")
+print("*********🚩*****🚩****🚩***********🚩***🚩***********🚩**************🚩***********")
+print("*********🚩******🚩**🚩*************🚩**🚩🚩🚩🚩🚩**🚩🚩🚩🚩🚩******🚩***********")
+print("🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁\n")
+//print("🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩")
 print("**  By  **\n** Jaswinder -  C0761019 **")
 print("** Jaspreet  -  C0761789 **")
 print("** Dharam    -  C0766599 **")
-print("** Harpreet  -  C0764734 **")
-print("** (^_^) **\n\n")
+print("** Harpreet  -  C0764734 **\n")
+print("        ** (^_^) **\n\n")
 
 //create object of GrandPrix Class
 var grandPrix = GrandPrix()
@@ -28,15 +30,14 @@ var grandPrix = GrandPrix()
 var category = ""
 var vType = 1
 var addMore = true
-    var isSide = true
+var isSide = true
+
+
+//call default constructor of vehicle class
+var  v = Vehicle()
+print("\(v.toString())\n")
+
 while(addMore){
-    
-    //    vehicleMaxSpeed = 0.0
-    //    var vehicleWeight = 0
-    //    var vehicleFuel = 0
-    //    var vehicleType = 0
-    
-    let vehicle = Vehicle()
     
     var isValid = true
     while(isValid){
@@ -49,7 +50,7 @@ while(addMore){
             vType = 1
             var go = true
             while(go){
-                print("Choose your Vechicle Category \n1 for Touring car \n2 for Racing car")
+                print("\nChoose your Vehicle Category \n1 for Touring car \n2 for Racing car")
                 let cate = readLine()!
                 if(cate == "1"){
                     go = false
@@ -68,11 +69,11 @@ while(addMore){
         case "2":
             isValid = false
             vType = 2
-       
+            
             var next = true
             while(next){
                 
-                print("Choose your Vechicle has Sidecar \n1 for YES \n2 for NO")
+                print("\nChoose your Vechicle has Sidecar \n1 for YES \n2 for NO")
                 let side = readLine()!
                 
                 if(side == "1"){
@@ -93,17 +94,17 @@ while(addMore){
         }
     }
     
-    print("Enter Vehicle Name : ")
+    print("\nEnter Vehicle Name : ")
     let name = readLine()!
     
-    print("Enter Vehicle Maximum Speed : ")
+    print("\nEnter Vehicle Maximum Speed : ")
     let speed = Double(readLine()!)
     
-    print("Enter Vehicle Weight : ")
+    print("\nEnter Vehicle Weight : ")
     let weight = Int(readLine()!)
     
     
-    print("Enter Vehicle Fuel : ")
+    print("\nEnter Vehicle Fuel : ")
     let fuel = Int(readLine()!)
     
     
@@ -125,15 +126,23 @@ while(addMore){
     }
     
     
-    print("Do you want to add More Vehicle! Choose \n1 for YES \n2 for NO  ")
+    print("\nDo you want to add More Vehicle! Choose \n1 for YES \n2 for NO \n ")
     
     let choice = readLine()!
     
     switch choice{
     case "1":
         addMore = true
+        
     case "2":
         addMore = false
+        if(grandPrix.vehicleCount() == 1){
+            
+            print("\nYou have added only one Vehicle, So you must add atlest 2 vehicles for GrandPrix \n")
+            addMore = true
+        }
+        
+        
     default:
         addMore = false
         break
@@ -147,37 +156,40 @@ while(addMore){
 
 var totalVehicle:Int = grandPrix.vehicleCount()
 
+
+
+
 var roundCount = 1
 repeat{
     
-repeat{
-    
-    print("Total number of vehicles entered is : \(totalVehicle) \nEnter the number of vehicles to select for race randomly :")
-    let ch:Int! = Int(readLine()!)
-    
-    if(ch > 0 && ch <= totalVehicle){
-
-        // add random vehcile LEFT
-        var Rname = ""
-        if(roundCount == 1){
-            Rname = "First"
-        }else if(roundCount == 2){
-                 Rname = "Second"
-        }else if(roundCount == 3){
-                 Rname = "Third"
+    repeat{
+        
+        print("\nTotal number of vehicles entered is : \(totalVehicle) \n\n\(grandPrix.printAllData()) \n\nEnter the number of vehicles to select for race randomly :")
+        let ch:Int! = Int(readLine()!)
+        
+        if(ch > 1 && ch <= totalVehicle){
+            
+            // add random vehcile LEFT
+            var Rname = ""
+            if(roundCount == 1){
+                Rname = "First"
+            }else if(roundCount == 2){
+                Rname = "Second"
+            }else if(roundCount == 3){
+                Rname = "Third"
+            }
+            
+            grandPrix.run(turn: 100, selected: ch , roundName : Rname)
+            roundCount += 1
+            
+            
+            break;
+            
+        }else{
+            print("\nVehicle number to race must be greater than 1 and less or equal to total number of vehicles present!\nTry Again...!!!")
         }
         
-        grandPrix.run(turn: 100, selected: ch , roundName : Rname)
-        roundCount += 1
-        
-        
-        break;
-        
-    }else{
-        print("Vehicle number to race must be greater than 0 and less or equal to total number of vehicles present!\nTry Again...!!!")
-    }
+    }while(true)
     
-}while(true)
-
 }while(roundCount < 4)
 
