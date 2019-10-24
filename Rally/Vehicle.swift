@@ -8,18 +8,13 @@
 
 import Foundation
 
-protocol VehicleProtocol {
-    
-    func performance(speed: Double,weight: Int) -> Double
-    
-}
 
 
-class Vehicle: VehicleProtocol{
+
+
+class Vehicle {
     
-    func performance(speed: Double, weight: Int) -> Double {
-        return speed / Double(weight)
-    }
+  
     
     
     
@@ -88,7 +83,7 @@ class Vehicle: VehicleProtocol{
     
     // Default Constructor
     init() {
-        self.vehicleName = ""
+        self.vehicleName = "Anonyms"
         self.vehicleMaxSpeed = 130
         self.vehicleWeight = 1000
         self.vehicleFuel = 0
@@ -112,7 +107,7 @@ class Vehicle: VehicleProtocol{
     
     
     func toString() -> String {
-        return ""
+        return   "Vehicle Name : \(vName) -> Max Speed : \(vMaxSpeed1)kmph -> Weight : \(vWeight)kg"
     }
     
 }
